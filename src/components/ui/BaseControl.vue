@@ -1,14 +1,14 @@
 <template>
-  <div class="my-4 relative">
+  <div class="my-2 md:my-4 relative">
     <label
       v-if="label"
-      class="block text-sm font-medium text-indigo-900 pl-3"
+      class="block text-xs md:text-sm font-medium text-indigo-900 pl-3"
       >{{ label }}</label
     >
     <slot></slot>
     <p
       v-if="errorText"
-      class="absolute text-sm text-red-500 font-medium pl-3 pt-1"
+      class="absolute text-xs md:text-sm text-red-500 font-medium pl-3 pt-1"
     >
       {{ errorText }}
     </p>

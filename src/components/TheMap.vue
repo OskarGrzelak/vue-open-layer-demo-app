@@ -1,14 +1,12 @@
 <template>
-  <h2
-    class="text-5xl font-medium uppercase tracking-wide text-indigo-900 text-center my-4"
-  >
-    The Map App
-  </h2>
-  <p class="text-lg text-center my-4">This is my first OpenLayer map.</p>
-  <div ref="map" class="w-full h-96"></div>
+  <div class="relative">
+    <div ref="map" class="w-full h-72 md:h-96"></div>
+    <map-info-box :name="name" :lat="lat" :lon="lon"></map-info-box>
+  </div>
 </template>
 
 <script>
+import MapInfoBox from './MapInfoBox.vue'
 import View from 'ol/View'
 import { fromLonLat } from 'ol/proj'
 import Map from 'ol/Map'
@@ -17,7 +15,10 @@ import OSM from 'ol/source/OSM'
 import 'ol/ol.css'
 
 export default {
-  props: ['lon', 'lat'],
+  components: {
+    MapInfoBox
+  },
+  props: ['lon', 'lat', 'name'],
   mounted() {
     new Map({
       target: this.$refs.map,

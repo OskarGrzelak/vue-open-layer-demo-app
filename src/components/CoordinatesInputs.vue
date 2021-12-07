@@ -19,8 +19,8 @@ export default {
   components: { BaseInput, BaseControl },
   data() {
     return {
-      lon: 19.94753670197295,
-      lat: 50.0637175819861,
+      lon: null,
+      lat: null,
     }
   },
   methods: {
